@@ -4,7 +4,7 @@ Win or Mac
 
 安裝：
 
-git clone 
+git clone https://github.com/elbartohub/Bilingual-SRT
 
 pip install -r requirements.txt
 
