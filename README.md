@@ -11,3 +11,7 @@ pip install -r requirements.txt
 執行方法：
 
 python translate_srt.py input.srt output.srt
+
+執行結果：
+
+![image](https://github.com/user-attachments/assets/264252b8-957b-4c92-924a-a433d29d3fcb)
