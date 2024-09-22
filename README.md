@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 執行方法：
 
-python translate_srt.py input.srt output.srt
+python translate.py input.srt output.srt
 
 執行結果：
 
