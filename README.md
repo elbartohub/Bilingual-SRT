@@ -23,3 +23,10 @@ python translate.py input.srt en zh-TW both
 執行結果：
 
 ![image](https://github.com/user-attachments/assets/264252b8-957b-4c92-924a-a433d29d3fcb)
+
+
+<input_file>：要翻譯的字幕文件的路徑（必需）。
+
+[source_lang]：源語言代碼（可選，默認為 en）。
+
+[target_lang]：目標語言代碼（可選，默認為 zh-TW）。
