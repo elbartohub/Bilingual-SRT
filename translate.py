@@ -1,6 +1,6 @@
 import re
 import sys
-from translate import Translator
+from translate import Translator  # 確保這裡的導入是正確的
 from tqdm import tqdm
 
 def translate_srt(input_file, output_file, source_lang="en", target_lang="zh-TW", keep_original=False):
@@ -17,14 +17,15 @@ def translate_srt(input_file, output_file, source_lang="en", target_lang="zh-TW"
         if re.match(r'^\d+$', line) or re.match(r'^\d{2}:\d{2}:\d{2},\d{3} --> \d{2}:\d{2}:\d{2},\d{3}$', line):
             translated_content.append(line)  # 保留時間戳和索引
         else:
-            try:
-                translated_line = translator.translate(line.strip())
-                if keep_original:
-                    translated_content.append(line)  # 添加原始字幕
-                translated_content.append(translated_line + '\n')  # 添加翻譯
-            except Exception as e:
-                print(f"翻譯錯誤: {e}")
-                translated_content.append(line)  # 當翻譯失敗，保留原始字幕
+            if line.strip():  # 確保行不為空
+                try:
+                    translated_line = translator.translate(line.strip())
+                    if keep_original:
+                        translated_content.append(line)  # 添加原始字幕
+                    translated_content.append(translated_line + '\n')  # 添加翻譯
+                except Exception as e:
+                    print(f"翻譯錯誤: {e}")  # 更詳細的錯誤信息
+                    translated_content.append(line)  # 當翻譯失敗，保留原始字幕
 
     with open(output_file, 'w', encoding='utf-8') as file:
         file.writelines(translated_content)
@@ -32,7 +33,7 @@ def translate_srt(input_file, output_file, source_lang="en", target_lang="zh-TW"
 # 從命令行獲取輸入和輸出文件
 if __name__ == "__main__":
     if len(sys.argv) < 2 or len(sys.argv) > 5:
-        print("用法: python translate_srt.py <input_file> [source_lang] [target_lang] [both]")
+        print("用法: python srt_translate.py <input_file> [source_lang] [target_lang] [both]")
         sys.exit(1)
 
     input_file = sys.argv[1]
