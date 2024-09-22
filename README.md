@@ -17,6 +17,7 @@ python translate.py input.srt
 
 
 翻譯並同時保留原始字幕
+
 python translate.py input.srt en zh-TW both
 
 執行結果：
