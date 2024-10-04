@@ -7,16 +7,13 @@
 系統需求: Windows 或 Mac。
 安裝:
 
-1.
-複製儲存庫：git clone https://github.com/elbartohub/Bilingual-SRT
+1.複製儲存庫：git clone https://github.com/elbartohub/Bilingual-SRT
 
-3.
-安裝必要套件：pip install -r requirements.txt
+2.安裝必要套件：pip install -r requirements.txt
 執行方式:
 
 
 若要翻譯字幕並保留原始字幕，請使用以下指令： python srt_translate.py input.srt 這會將英文字幕翻譯成中文，並同時顯示英文和中文。
-
 
 
 若要指定原始語言和目標語言，並同時保留原始字幕，請使用以下指令： python srt_translate.py input.srt en zh-TW both
